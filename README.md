@@ -9,8 +9,8 @@ Elixir application representating a simple Deterministic Finite-state Automaton 
  3. Get libs: `mix deps.get`
  4. Compile: `mix escript.build`
  
- 5. To get docs: `mix docs`
- 6. Running tests: `mix test`
+ 5. To get docs: `mix docs` (will appear in doc/index.html)
+ 6. To run tests: `mix test`
  
 ### Instruction:
  - `./dfa {file_name} < ATT`
