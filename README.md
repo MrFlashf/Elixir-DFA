@@ -1,21 +1,19 @@
-# Dfa
+# Elixir Deterministic Finite-state Automaton (no wage)
 
-**TODO: Add description**
+Elixir application representating a simple Deterministic Finite-state Automaton (DFA)
 
-## Installation
+### Instalation:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `dfa` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:dfa, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/dfa](https://hexdocs.pm/dfa).
-
+ 1. Clone repository
+ 2. cd dfa
+ 3. Get libs: `mix deps.get`
+ 4. Compile: `mix escript.build`
+ 
+ 5. To get docs: `mix docs`
+ 6. Running tests: `mix test`
+ 
+### Instruction:
+ - `./dfa {file_name} < ATT`
+ - `{file_name}` is a name of the file that contains words to check,
+ and `AT&T` is a file containing automaton rules.
+ - For example `./dfa simple.arg < simple.in`

@@ -7,13 +7,12 @@ defmodule Dfa do
   def main(file_name) do
     words = get_words file_name
 
-    automaton =
-      IO.read(:stdio, :all)
-      |> String.split("\n")
-      |> delete_comments
-      |> split_input
-      |> split_transitions
-      |> compare_words(words)
+    IO.read(:stdio, :all)
+    |> String.split("\n")
+    |> delete_comments
+    |> split_input
+    |> split_transitions
+    |> compare_words(words)
   end
 
   def compare_words(automaton, words) do
@@ -53,7 +52,7 @@ defmodule Dfa do
 
       iex> att = %Dfa.Automaton{accepted: ["3"], transitions: ["0 1 a", "1 2 b", "2 3 c"]}
       iex> Dfa.split_transitions att
-      %Dfa.Automaton{accepted: ["3"], transitions: [%{{"0", "a"} => "1"}, %{{"1", "b"} => "2"}, %{{"2", "c"} => "3"}]
+      %Dfa.Automaton{accepted: ["3"], transitions: %{{"0", "a"} => "1", {"1", "b"} => "2", {"2", "c"} => "3"}}
   """
   def split_transitions(%Automaton{transitions: transitions} = automaton) do
     new_transitions =
@@ -65,7 +64,7 @@ defmodule Dfa do
   end
 
   def map_transition(transition) do
-    [from, to, char] = String.split transition, " "
+    String.split transition, " "
   end
 
   @doc """
